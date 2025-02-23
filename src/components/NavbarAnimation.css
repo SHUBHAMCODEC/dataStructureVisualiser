@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    overflow: hidden;
+}
+
+.navbar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #575757;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.code {
+    position: absolute;
+    font-family: monospace;
+    font-size: 18px;
+    color: #0f0;
+    white-space: nowrap;
+    animation: moveCode 8s linear infinite;
+}
+
+@keyframes moveCode {
+    0% { transform: translateX(-100vw); opacity: 1; }
+    45% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { transform: translateX(100vw); opacity: 0; }
+}
+
+.machine {
+    width: 120px;
+    height: 50px;
+    background: gray;
+    border-radius: 10px;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.output-container {
+    position: absolute;
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    animation: moveOutput 8s linear infinite;
+}
+
+.output {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: white;
+    font-family: monospace;
+}
+
+/* Tree */
+.tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tree-node {
+    width: 25px;
+    height: 25px;
+    background: cyan;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 50%;
+    margin: 2px;
+    border: 2px solid white;
+    font-size: 12px;
+}
+
+/* Array */
+.array {
+    display: flex;
+}
+
+.array-box {
+    width: 25px;
+    height: 25px;
+    background: orange;
+    text-align: center;
+    line-height: 25px;
+    margin: 2px;
+    border: 2px solid white;
+    font-size: 12px;
+}
+
+/* Linked List */
+.linked-list {
+    display: flex;
+    align-items: center;
+}
+
+.ll-node {
+    width: 25px;
+    height: 25px;
+    background: lightgreen;
+    text-align: center;
+    line-height: 25px;
+    margin: 2px;
+    border: 2px solid white;
+    position: relative;
+    font-size: 12px;
+}
+
+.arrow {
+    width: 12px;
+    height: 2px;
+    background: white;
+    margin: 0 2px;
+}
+
+/* Stack */
+.stack {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.stack-box {
+    width: 35px;
+    height: 25px;
+    background: magenta;
+    text-align: center;
+    line-height: 25px;
+    margin: 2px;
+    border: 2px solid white;
+    font-size: 12px;
+}
+
+/* Queue */
+.queue {
+    display: flex;
+}
+
+.queue-box {
+    width: 35px;
+    height: 25px;
+    background: yellow;
+    text-align: center;
+    line-height: 25px;
+    margin: 2px;
+    border: 2px solid white;
+    font-size: 12px;
+}
+
+/* Graph */
+.graph {
+    display: flex;
+    align-items: center;
+}
+
+.graph-node {
+    width: 25px;
+    height: 25px;
+    background: red;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 50%;
+    margin: 2px;
+    border: 2px solid white;
+    font-size: 12px;
+}
+
+@keyframes moveOutput {
+    0% { opacity: 0; transform: translateX(0vw); }
+    50% { opacity: 0; }
+    55% { opacity: 1; transform: translateX(0vw); }
+    100% { opacity: 1; transform: translateX(100vw); }
+}
