@@ -1,3 +1,4 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -5,8 +6,9 @@
 }
 
 body {
-    background-color: white;
-    overflow: hidden;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
 }
 
 .navbar-container {
@@ -15,173 +17,58 @@ body {
     left: 0;
     width: 100%;
     height: 80px;
-    background: #575757;
+    background: #333;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
+/* Code Snippets */
 .code {
     position: absolute;
-    font-family: monospace;
+    font-family: 'Courier New', monospace;
     font-size: 18px;
-    color: #0f0;
+    color: #00ff00;
     white-space: nowrap;
     animation: moveCode 8s linear infinite;
+    opacity: 0.8;
 }
 
 @keyframes moveCode {
     0% { transform: translateX(-100vw); opacity: 1; }
-    45% { opacity: 1; }
-    50% { opacity: 0; }
+    50% { opacity: 1; }
+    55% { opacity: 0; }
     100% { transform: translateX(100vw); opacity: 0; }
 }
 
+/* Processing Machine */
 .machine {
-    width: 120px;
-    height: 50px;
-    background: gray;
+    width: 250px;
+    height: 80px;
+    background: #444;
     border-radius: 10px;
     position: relative;
     z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
-    color: white;
-    text-align: center;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 2px black;
 }
 
+/* Output Containers */
 .output-container {
     position: absolute;
     display: flex;
-    gap: 10px;
+    gap: 20px;
     opacity: 0;
     animation: moveOutput 8s linear infinite;
-}
-
-.output {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    color: white;
-    font-family: monospace;
-}
-
-/* Tree */
-.tree {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.tree-node {
-    width: 25px;
-    height: 25px;
-    background: cyan;
-    text-align: center;
-    line-height: 25px;
-    border-radius: 50%;
-    margin: 2px;
-    border: 2px solid white;
-    font-size: 12px;
-}
-
-/* Array */
-.array {
-    display: flex;
-}
-
-.array-box {
-    width: 25px;
-    height: 25px;
-    background: orange;
-    text-align: center;
-    line-height: 25px;
-    margin: 2px;
-    border: 2px solid white;
-    font-size: 12px;
-}
-
-/* Linked List */
-.linked-list {
-    display: flex;
-    align-items: center;
-}
-
-.ll-node {
-    width: 25px;
-    height: 25px;
-    background: lightgreen;
-    text-align: center;
-    line-height: 25px;
-    margin: 2px;
-    border: 2px solid white;
-    position: relative;
-    font-size: 12px;
-}
-
-.arrow {
-    width: 12px;
-    height: 2px;
-    background: white;
-    margin: 0 2px;
-}
-
-/* Stack */
-.stack {
-    display: flex;
-    flex-direction: column-reverse;
-}
-
-.stack-box {
-    width: 35px;
-    height: 25px;
-    background: magenta;
-    text-align: center;
-    line-height: 25px;
-    margin: 2px;
-    border: 2px solid white;
-    font-size: 12px;
-}
-
-/* Queue */
-.queue {
-    display: flex;
-}
-
-.queue-box {
-    width: 35px;
-    height: 25px;
-    background: yellow;
-    text-align: center;
-    line-height: 25px;
-    margin: 2px;
-    border: 2px solid white;
-    font-size: 12px;
-}
-
-/* Graph */
-.graph {
-    display: flex;
-    align-items: center;
-}
-
-.graph-node {
-    width: 25px;
-    height: 25px;
-    background: red;
-    text-align: center;
-    line-height: 25px;
-    border-radius: 50%;
-    margin: 2px;
-    border: 2px solid white;
-    font-size: 12px;
 }
 
 @keyframes moveOutput {
@@ -189,4 +76,155 @@ body {
     50% { opacity: 0; }
     55% { opacity: 1; transform: translateX(0vw); }
     100% { opacity: 1; transform: translateX(100vw); }
+}
+
+.output {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+}
+
+/* Tree */
+.tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.tree-node {
+    width: 30px;
+    height: 30px;
+    background: #4fc3f7;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Array */
+.array {
+    display: flex;
+    gap: 5px;
+}
+
+.array-box {
+    width: 30px;
+    height: 30px;
+    background: #ff9800;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 4px;
+    border: 2px solid #fff;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Linked List */
+.linked-list {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.ll-node {
+    width: 30px;
+    height: 30px;
+    background: #81c784;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 4px;
+    border: 2px solid #fff;
+    font-size: 14px;
+    color: #fff;
+}
+
+.arrow {
+    width: 15px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+/* Stack */
+.stack {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 5px;
+}
+
+.stack-box {
+    width: 40px;
+    height: 30px;
+    background: #ba68c8;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 4px;
+    border: 2px solid #fff;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Queue */
+.queue {
+    display: flex;
+    gap: 5px;
+}
+
+.queue-box {
+    width: 40px;
+    height: 30px;
+    background: #ffd54f;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 4px;
+    border: 2px solid #fff;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Graph */
+.graph {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.graph-node {
+    width: 30px;
+    height: 30px;
+    background: #e57373;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .code {
+        font-size: 14px;
+    }
+
+    .machine {
+        width: 100px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .output-container {
+        flex-direction: column;
+    }
 }
