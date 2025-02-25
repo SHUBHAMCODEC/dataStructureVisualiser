@@ -10,7 +10,7 @@ const NavbarAnimation = () => {
       <div className="code" style={{ animationDelay: "4s" }}>for (let i=0; i&lt;10; i++) {}</div>
 
       {/* Processing Machine */}
-      <div className="machine">MACHINE</div>
+      <div className="machine">CODE VISUALIZER</div>
 
       {/* Output Containers */}
       <div className="output-container" style={{ animationDelay: "0s" }}>
